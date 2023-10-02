@@ -7,7 +7,7 @@ import { Webcam, callbutton, answerbutton,updatebutton } from "../components/com
 import React, { useRef, useEffect, useState } from 'react';
 
 import io from "socket.io-client";
-const socket = io.connect("http://seraphic-being-399606.uc.r.appspot.com");
+const socket = io();
 
  
 export default function Sockets(){

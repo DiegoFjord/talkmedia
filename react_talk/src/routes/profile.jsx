@@ -9,7 +9,7 @@ import io from "socket.io-client";
 import Whom from '../components/whoswho';
 import tofollow from '../components/functionfollow';
 import { FindIfFollow } from '../components/functionfollow';
-const socket = io.connect("http://seraphic-being-399606.uc.r.appspot.com");
+const socket = io();
 
 
 // DEFAULT STARTS BELOW   

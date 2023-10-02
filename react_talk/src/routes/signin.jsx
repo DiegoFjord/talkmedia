@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Sockets from "../components/cameraandsocket";
 //websockets
 import io from "socket.io-client";
-const socket = io.connect("http://seraphic-being-399606.uc.r.appspot.com");
+const socket = io();
 //
 export default function SignupPage() {
     let jwt = JSON.parse(sessionStorage.getItem('jwt'));

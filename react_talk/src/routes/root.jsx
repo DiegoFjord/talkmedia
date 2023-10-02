@@ -8,7 +8,7 @@ import {useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom';
 import io from "socket.io-client";
 import Algofollow from "../components/algofollow";
-const socket = io.connect("http://seraphic-being-399606.uc.r.appspot.com");
+const socket = io();
 
 
 export default function Root() {

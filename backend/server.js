@@ -63,7 +63,7 @@ app.get('/', (req, res) => {
 
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:5000", "http://seraphic-being-399606.uc.r.appspot.com"],
+    origin: "*",
     methods: ["GET", "POST"],
   },
 });
