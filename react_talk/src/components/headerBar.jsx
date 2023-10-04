@@ -21,12 +21,36 @@ export default function Header({inputs, text, img}) {
 
     return (
       <div>
-        <div className="navbar navbar-expand-lg navbar-light bg-light">
-        <Link to={`/explore`} className="header-item">explore</Link>
-        <Link to={`/chat/1`} className="header-item">chat</Link>
-        <Link to={`/people`} className="header-item">people</Link>
-        <Link to={`/login`} className="header-item">signin</Link>
-        {jwt?(<Link to={`/profile/${jwt.user.id}`} className="header-item">profile</Link>):<></>}
+        <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
+          <div className="container">
+          <a href="#" className="navbar-brand">aloha</a>
+          <div className="collapse navbar-collapse"></div>
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+            <Link to={`/explore`} className="nav-link">explore</Link>
+            </li>
+
+            <li className="nav-item">
+            <Link to={`/chat/1`} className="nav-link">chat</Link>
+            </li>
+
+            <li className="nav-item">
+            <Link to={`/people`} className="nav-link">people</Link>
+            </li>
+
+            <li className="nav-item">
+            <Link to={`/login`} className="nav-link">signin</Link>
+            </li>
+
+            <li className="nav-item">
+            {jwt?(<Link to={`/profile/${jwt.user.id}`} className="nav-link">profile</Link>):<></>}
+            </li>
+          </ul>
+
+
+          </div>
+        </nav>
+        <div className="navbar">
         </div>
 
       </div>

@@ -37,10 +37,11 @@ export default function Root() {
 
 
   return (
-  <div id="detail">
+  <div className="background">
     <Header/>
+    <div>
     <Outlet />
-    <div id="map"></div>
+    </div>
   </div>
   );
 }

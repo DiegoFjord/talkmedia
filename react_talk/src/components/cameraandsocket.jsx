@@ -1,7 +1,6 @@
 import ReactSearchBox from "react-search-box";
 import everyone from "../components/everyone";
 import { Outlet, Link } from "react-router-dom";
-import Header from "../components/headerBar";
 import supabase from "../../config/supabaseClient";
 import { Webcam, callbutton, answerbutton,updatebutton } from "../components/communicate";
 import React, { useRef, useEffect, useState } from 'react';
@@ -83,6 +82,7 @@ function Camshow({user}){
       <button onClick={answerbuttonpass}>answerbutton</button>
       <button onClick={updatebuttonpass}>updatebutton</button>
       <button onClick={() => setShowWebcam(false)}>hangupbutton</button>
+      <p>please press each button multiple times to work. Thank You.</p>
       </>:
       <button onClick={() => setShowWebcam(true)}>opencam</button>
     }

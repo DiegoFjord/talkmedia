@@ -92,7 +92,7 @@ newconvo(jwt.user.id)
 
             <div >
             <Converse individual={jwt.user.id}/>
-            <button className='btn btn-block' onClick={newconvoadd}>&gt; new conversation</button>
+            <button className='btn' onClick={newconvoadd}>conversation<i className="bi bi-plus"></i></button>
 
             </div>
             <div className='box' >
@@ -112,7 +112,7 @@ newconvo(jwt.user.id)
                 />
                 </div>
                 <div className="form-group">
-                    <button type="submit" className='btn btn-block'>&gt;</button>
+                    <button type="submit" className='btn btn-block'><i className="bi bi-send"></i></button>
                 </div>
             </form>
 
@@ -128,7 +128,8 @@ newconvo(jwt.user.id)
                 />
                 </div>
                 <div className="form-group">
-                    <button type="submit" className='btn btn-block'>poner mas personas</button>
+                    <button type="submit" className='btn btn-block'><i className="bi bi-person-plus"></i>
+</button>
                 </div>
             </form>
          </section>

@@ -2,6 +2,40 @@
 @import "https://unpkg.com/open-props";
 @import "https://unpkg.com/open-props/normalize.min.css";
 
+
+
+::-webkit-scrollbar {
+  width: .7em;
+  height: .7em;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(0, 0%, 12%);
+  margin-block: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 66%);
+  border-radius: 50vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 0%, 29%);
+}
+
+
+/* logo */
+.map{
+  height: 400px;
+  width: 100%;
+}
+/* logo */
+.logo{
+  height: 30px;
+  width: 30px;
+}
+/* scroll bar styling horizontal */
+
 .media-scroller {
   --_spacer: var(--size-3);
   display: grid;
@@ -37,8 +71,10 @@
 
 .media-element > img {
   inline-size: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1;
   object-fit: cover;
+  border-radius: 25%;
+
 }
 
 .snaps-inline {
@@ -51,7 +87,6 @@
 }
 
 /* general styling */
-
 .container {
   inline-size: min(100% - 4rem, 70rem);
   margin-inline: auto;
@@ -69,22 +104,9 @@
 }
 
 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+.background{
+  background-color: #5d5d5d;
 }
-
 a {
   font-weight: 500;
   color: #646cff;
@@ -94,12 +116,13 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+p{
+  color: #535bf2;
+}
+
+.break{
+  max-width: 20ch; /* This will limit each line to approximately 30 characters */
+  word-wrap: break-word; /* This will move extra characters to a new line */
 }
 
 h1 {
@@ -109,7 +132,8 @@ h1 {
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
+  border-color: #6b6b6b;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
@@ -118,6 +142,7 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
@@ -129,27 +154,19 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: #cacaca;
   }
   a:hover {
     color: #747bff;
   }
   button {
     background-color: #f9f9f9;
+
   }
 }
 
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  font-family: 'Poppins', sans-serif;
-  height: 100vh;
-}
 
 a {
   text-decoration: none;
@@ -226,29 +243,6 @@ h3 {
   color: #828282;
 }
 
-.goals {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-
-.goal {
-  background-color: #f4f4f4;
-  margin: 10px 0;
-  padding: 20px 0 10px;
-  position: relative;
-}
-
-.goal .close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  cursor: pointer;
-  border: none;
-  background: none;
-}
-
-.form,
 .content {
   width: 70%;
   margin: 0 auto;

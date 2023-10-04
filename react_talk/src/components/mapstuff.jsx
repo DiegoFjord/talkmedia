@@ -59,8 +59,9 @@ const [selectedMarker, setSelectedMarker] = useState(null);
 //PASSINGIN STRING THATS WHY NO WORKING
   return (
     <GoogleMap
+    mapContainerClassName="map"
       id="map"
-      mapContainerStyle={{ height: "400px", width: "100%" }}
+      // mapContainerStyle={{ height: "400px", width: "100%" }}
       zoom={8}
       center={{ lat: 36.1699, lng: -115.1398 }}
     >
@@ -86,7 +87,7 @@ const [selectedMarker, setSelectedMarker] = useState(null);
         >
           <div>
           
-          <h2><Individual user={"b9cc03a8-d7e0-41c2-a8c3-4a5524901af1"}/></h2>
+          <h2><Individual user={selectedMarker.user_id}/></h2>
           <h2>{selectedMarker.posted}</h2>
             <p>This is a popup!{"markers"}</p>
           </div>

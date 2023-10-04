@@ -20,7 +20,6 @@ export default function SignupPage() {
     }, [socket]) 
   
 
-
     const[formData, setFormData] = useState({
         email:'',
         password:'',
@@ -34,16 +33,16 @@ export default function SignupPage() {
             [e.target.name]: e.target.value,
         }))
     }
-    const show = async(e) =>{
-        e.preventDefault()
+    // const show = async(e) =>{
+    //     e.preventDefault()
 
-        if (jwt && jwt.session) {
-            const access_tokener = jwt.session.access_token;
-            const { data, error } = await supabase.auth.getSession( access_tokener )
-            console.log(data)
-            console.log(jwt.user.id);
-          }
-    }
+    //     if (jwt && jwt.session) {
+    //         const access_tokener = jwt.session.access_token;
+    //         const { data, error } = await supabase.auth.getSession( access_tokener )
+    //         console.log(data)
+    //         console.log(jwt.user.id);
+    //       }
+    // }
 
 
     const onSubmit = async(e) =>{
@@ -72,6 +71,33 @@ console.log("please confirm email")
         window.location.reload(false);
 
     }
+
+    async function guest(){
+        const { data, error } = await supabase.auth.signInWithPassword({
+            email: "test@test.com",
+            password: "000000",
+          })
+          if (error) {
+            console.error('Error inserting data:', error);
+          } else {
+            console.log('Data inserted successfully:', data);
+
+          }
+
+        if (data && !error){
+            sessionStorage.setItem('jwt', JSON.stringify(data));
+            console.log(jwt);
+        }
+        if(jwt && jwt.session){
+            navigate('/explore');
+        }
+        if(jwt && !jwt.session){
+console.log("please confirm email")
+        }
+        window.location.reload(false);
+
+    }
+    
 
     return(
         <>
@@ -113,12 +139,8 @@ console.log("please confirm email")
             </form>
          </section>
          <section className="form">
-            <form onSubmit={show}>
-                <div className="form-group">
-                    <button type="submit" className='btn btn-block'>data</button>
-                </div>
-            </form>
             <Link to={`/signup`} >dont have an account? Signup</Link>
+            <button onClick={() => guest()}>continue as a guest</button>
          </section>
          </>
 

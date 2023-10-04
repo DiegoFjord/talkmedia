@@ -14,24 +14,18 @@ export default function ExplorePage() {
   return(
     
     <div>
-      <div className="fix,boxtwo">
-      <h1 id='holder' >bonjur</h1>
-      <img src='/src/components/talk logo.jpg' alt="" className='logo'/>
-      </div >
-
-      <br></br>
       <div >
+      <p>bonjur</p>
       <p>comments</p>
       <div><Followers tag = {'1'}/></div>
       <p>Images</p>
       <div><Followers tag = {'2'} img = {pic}/></div>
       <p>Interests</p>
-      <div><Followers tag = {'3'} img = {pic}/></div>
+      <div><Followers tag = {'3'} /></div>
       <p>hobbies</p>
-      <div><Followers tag = {'3'} img = {pic}/></div>
+      <div><Followers tag = {'3'} /></div>
       <div>
         <Location/>
-        <br></br>
       </div>
       </div>
     </div>

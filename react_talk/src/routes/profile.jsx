@@ -40,7 +40,6 @@ export default function Profile() {
             navigate('/login'); 
         }
         food()
-
     }, []) 
 
 
@@ -53,9 +52,10 @@ export default function Profile() {
     const[formData, setFormData, ] = useState({
         text:'',
         place:'',
+        username:'',
     })
     const [formError, setFormError] = useState(null)
-    const {text, place} = formData
+    const {text, place,username} = formData
     
     const onChange = (e) =>{
         setFormData((prevState) => ({
@@ -90,8 +90,11 @@ export default function Profile() {
         { value: 'three', label: 'hi' },
     ];
            
+// grabs users from identity
 
-    
+
+
+     
 let datatwo = []
 async function food(){
     const { data, error } = await supabase
@@ -113,6 +116,25 @@ async function food(){
 }
 
 const [selectedValue, setSelectedValue] = useState(1);
+
+const usernamed = async(e) =>{
+    e.preventDefault()
+
+const { data, error } = await supabase
+  .from('identity')
+  .insert([{ user_id: contact, name: username }])
+  .select()
+    if (error){
+        const { data, error } = await supabase
+         .from('identity')
+        .update({ name: username })
+        .eq("user_id", contact)
+        .select()
+
+
+       
+    }
+}
 
 // Handle the onChange event to update the selected value
 const _onSelect = (selectedOption) => {
@@ -162,7 +184,20 @@ return(
             onChange={onChange}
         />
         </div>
-            <button type="submit" className='button' >&gt;</button>
+            <button type="submit"><i className='bi bi-plus-square'></i></button>
+    </form>
+    <form onSubmit={usernamed}>
+        <div className="form-group">
+        <input  type='text'
+            className='username'
+            id='username'
+            name='username'
+            value={username}
+            placeholder='make a username'
+            onChange={onChange}
+        />
+        </div>
+            <button type="submit"><i className='bi bi-plus-square'></i></button>
     </form>
     </section>
 

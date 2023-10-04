@@ -43,14 +43,14 @@ async function remove(here){
 
  return (
   <div>
-  <ul style={{backgroundColor: "#0502c9"}}>
+  <ul style={{backgroundColor: "gray"}}>
 
     {usedata.length > 0 ? (
       // Map and render the data only if it exists
       usedata.map(data => (
         <div key={Math.floor(Math.random() * 10000)}>
       <li style={{color: "white"}}>{data.posted}</li>
-      {contact == jwt.user.id && <button onClick={()=>remove(data.id)}>Delete</button >}
+      {contact == jwt.user.id && <button onClick={()=>remove(data.id)} style={{background: "gray"}}><i className="bi bi-trash-fill"></i></button >}
       </div>
       ))            ) : (
       // Render a loading message or some other UI while waiting for data

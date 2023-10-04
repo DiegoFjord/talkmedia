@@ -19,7 +19,6 @@ lerna-debug.log*
 *.sw?
 
 
-index.html
 /config
 node modules/
 /public
