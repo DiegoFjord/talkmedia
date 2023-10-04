@@ -14,7 +14,7 @@ export default function Location() {
 
 
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "",
+    googleMapsApiKey: "AIzaSyANuEcjQHsz7xtPExoAci63l4BMItdjJ44",
   });
 
   if (!isLoaded) return <div>Loading...</div>;
