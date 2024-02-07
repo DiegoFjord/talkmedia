@@ -30,7 +30,6 @@ export default function SetupPage() {
     const onSubmit = async(e) =>{
         //it works
          e.preventDefault()
-        // const { data, error } = await supabase.auth.getSession( "eyJhbGciOiJIUzI1NiIsImtpZCI6IjNYSWkzZ3RHaGF4cXVHeWwiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNjkzMTE2MTA4LCJpYXQiOjE2OTMxMTI1MDgsImlzcyI6Imh0dHBzOi8vZ3VrenRlZHVwb3phbnB0a3Jjc3Muc3VwYWJhc2UuY28vYXV0aC92MSIsInN1YiI6ImRjM2NmODQ0LTFlNDItNDY5OC04MWIxLTNjZDVmMGRmYWVjOCIsImVtYWlsIjoiZ2RpZWdvZy4xMDI5MzhAZ21haWwuY29tIiwicGhvbmUiOiIiLCJhcHBfbWV0YWRhdGEiOnsicHJvdmlkZXIiOiJlbWFpbCIsInByb3ZpZGVycyI6WyJlbWFpbCJdfSwidXNlcl9tZXRhZGF0YSI6e30sInJvbGUiOiJhdXRoZW50aWNhdGVkIiwiYWFsIjoiYWFsMSIsImFtciI6W3sibWV0aG9kIjoicGFzc3dvcmQiLCJ0aW1lc3RhbXAiOjE2OTMxMTI1MDh9XSwic2Vzc2lvbl9pZCI6IjNmYThiNDZmLWEyNzEtNGRlZC04MzQ4LTczYzM2ZDgwNGE0OCJ9.oiH-sQWbNUa98r94piGyDUjTx-XsPYjodrAnqefG2V4" )
         // const { session, user } = data
         // console.log(data)
         const { data, error } = await supabase.rpc('bacon')
